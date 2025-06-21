@@ -1,0 +1,131 @@
+# open_path_navigation.py
+# WRO 2025 Future Engineers - Open Path Challenge
+# Raspberry Pi + Arduino Mega + TFmini Plus + BNO085 + TCS34725 + ArduCam
+
+import time
+import board
+import busio
+import serial
+import cv2
+from pyfirmata import ArduinoMega, util
+import adafruit_tcs34725
+from adafruit_bno08x.i2c import BNO08X_I2C
+from adafruit_bno08x import BNO08X
+
+# ----- INITIALIZATION -----
+
+print("Initializing Open Path Robot...")
+
+# Arduino Mega (motor + steering)
+board_arduino = ArduinoMega('/dev/ttyACM0')
+it = util.Iterator(board_arduino)
+it.start()
+
+motor_pwm = board_arduino.get_pin('d:5:p')
+servo = board_arduino.get_pin('d:9:s')
+
+# I2C setup
+i2c = busio.I2C(board.SCL, board.SDA)
+color_sensor = adafruit_tcs34725.TCS34725(i2c)
+bno = BNO08X_I2C(i2c)
+bno.enable_feature(BNO08X.FEATURE_ROTATION_VECTOR)
+
+# Camera
+camera = cv2.VideoCapture(0)
+
+# LiDAR (for data logging only here)
+lidars = []
+for i in range(4):
+    try:
+        lidar = serial.Serial(f'/dev/ttyUSB{i}', 115200, timeout=1)
+        lidars.append(lidar)
+        print(f"[INIT] TFmini {i} ready.")
+    except:
+        print(f"[WARN] LiDAR {i} not found.")
+
+# ----- HELPER FUNCTIONS -----
+
+def drive_forward(speed=0.6):
+    motor_pwm.write(speed)
+    print(f"[Motor] Driving forward at {speed*100:.0f}% speed")
+
+def stop_motor():
+    motor_pwm.write(0)
+    print("[Motor] Stopped")
+
+def set_steering(angle=90):
+    servo.write(angle)
+    print(f"[Servo] Steering angle set to {angle}°")
+
+def capture_image():
+    ret, frame = camera.read()
+    if ret:
+        filename = f"open_img_{int(time.time())}.jpg"
+        cv2.imwrite(filename, frame)
+        print(f"[Camera] Image saved: {filename}")
+
+def read_color_sensor():
+    try:
+        temp = color_sensor.color_temperature
+        lux = color_sensor.lux
+        print(f"[Color] Temp: {temp}K | Lux: {lux:.2f}")
+    except:
+        print("[Color] Sensor error")
+
+def read_imu_yaw():
+    try:
+        quat = bno.rotation_vector
+        if quat:
+            yaw = quat[2]  # approx
+            print(f"[IMU] Yaw (approx): {yaw:.3f}")
+            return yaw
+    except:
+        print("[IMU] Sensor error")
+    return 0
+
+def log_lidar_data():
+    for i, lidar in enumerate(lidars):
+        try:
+            if lidar.in_waiting >= 9:
+                data = lidar.read(9)
+                if data[0] == 0x59 and data[1] == 0x59:
+                    dist = data[2] + (data[3] << 8)
+                    print(f"[LiDAR {i}] Distance: {dist} cm")
+        except Exception as e:
+            print(f"[LiDAR {i}] Error: {e}")
+
+def adjust_steering_from_imu(reference_yaw):
+    current_yaw = read_imu_yaw()
+    error = current_yaw - reference_yaw
+    k = 50  # gain
+    angle = max(60, min(120, 90 - error * k))
+    set_steering(angle)
+
+# ----- MAIN ROUTINE -----
+
+def open_path_routine():
+    print("🚗 Starting Open Path Navigation Routine...")
+    reference_yaw = read_imu_yaw()
+    drive_forward(0.6)
+
+    frame_count = 0
+
+    try:
+        while True:
+            read_color_sensor()
+            log_lidar_data()
+            adjust_steering_from_imu(reference_yaw)
+
+            if frame_count % 3 == 0:
+                capture_image()
+            frame_count += 1
+
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        print("🛑 Routine stopped.")
+        stop_motor()
+        camera.release()
+
+if __name__ == "__main__":
+    open_path_routine()
