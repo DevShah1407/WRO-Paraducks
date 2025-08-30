@@ -12,7 +12,7 @@
 
 - [Obstacle_Challenge_2025_Final.py](FinalCode/Obstacle_Challenge_2025_Final.py) - contains our final code for the obstacle challenge
 
-- [Paraducks_V2.zip](Paraducks_V2.zip) - a zip file with our first commit (original code)
+- `Program Code V1` - a folder with our first commits (original code)
 
 - [Video](Documentation/Video) - contains a video of our robots drive
 
