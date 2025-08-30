@@ -30,4 +30,5 @@ Neel Shah is the lead technician of an FRC Team. He's a 10th grader at the Bomba
 
 Tara Guha Thakurta was a coding team member for an FRC team. She's a 10th grader at the Bombay International School and an robotics engineer. She enjoys building robots and creating AI models for anything she likes. Her other hobbies are sports as she is an avid football fan. 
 
-Manish Ganeshan is a construction team member for a FRC team. He's an avid constructer and loves STEM. He's a 10th grader and a student council member at the Dhirubhai Ambani International School. He is also a sports enthusiast, WRO being the perfect link between conpetitve sport and robotics.
+Dev Shah is a construction team member for a FRC team. He's an avid constructer and loves STEM. He's a 10th grader and a student council member at the Bombay International School. He is also an avid debater as he participates in MUN's regularly
+
