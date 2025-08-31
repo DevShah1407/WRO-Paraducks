@@ -1,3 +1,3 @@
-obstacle challenge link: https://youtu.be/UaMzFEyyELQ
+obstacle challenge link: https://youtu.be/MZdpd2i68Bk
 
-open challenge link: https://youtu.be/4fLFPahP-dY
+open challenge link: https://youtu.be/YK3iWzCIbPs
