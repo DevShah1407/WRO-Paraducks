@@ -34,7 +34,7 @@ This repository provides all the information about the WRO Future Engineers 2025
 
 All 3 of us have prior FIRST Robotics Competition and/or FIRST Tech Challenge experience, and wanted to try our hands at something new!
 
-Neel Shah is the lead technician of an FRC Team. He's a 10th grader at the Bombay International School and an aspiring engineer. He enjoys building robots and objects, starting all the way from childhood with lego. His hobbies include sports such as squash and football, as well as having fun and joking around.
+Neel Shah is the lead technician of an FRC Team. He's a 10th grader at the Bombay International School and an aspiring engineer. He enjoys building robots, starting all the way from childhood with lego. His hobbies include sports such as squash and football, as well as researching and learning about new advances in STEM.
 
 Tara Guha Thakurta was a coding team member for an FRC team. She's a 10th grader at the Bombay International School and a robotics engineer. She enjoys building robots and creating AI models for anything she likes. Her other hobbies are sports as she is an avid football fan. 
 
