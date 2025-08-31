@@ -19,7 +19,7 @@ Original code:
 
 Final Code Folder:
 
-- [Imports.ziop](FinalCode/Imports.zip) - contains our imports and functions
+- [Imports.zip](FinalCode/Imports.zip) - contains our imports and functions
 
 - [Open_Challenge_2025.py](FinalCode/Open_Challenge_2025.py) - contains our final code for the open challenge
 
