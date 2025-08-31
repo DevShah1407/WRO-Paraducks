@@ -3,20 +3,28 @@
 
 # Content
 
+- [CAD](CAD) - contains the CAD for our robot
+
+Documentation Folder:
 
 - [robot-images](Documentation/Image/robot-images) - contains images of our robot
 
 - [team-images](Documentation/Image/team-images) - contains an image of our team
 
+- [Video](Documentation/Video) - contains a video of our robots drive
+
+Original code:
+
+- `Program Code V1` - a folder with our first commits (original code)
+
+Final Code Folder:
+
 - [Open_Challenge_2025.py](FinalCode/Open_Challenge_2025.py) - contains our final code for the open challenge
 
 - [Obstacle_Challenge_2025_Final.py](FinalCode/Obstacle_Challenge_2025_Final.py) - contains our final code for the obstacle challenge
 
-- `Program Code V1` - a folder with our first commits (original code)
 
-- [Video](Documentation/Video) - contains a video of our robots drive
 
-- [CAD](CAD) - contains the CAD for our robot
 
 
 # Introduction
