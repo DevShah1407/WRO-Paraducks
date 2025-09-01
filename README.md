@@ -11,7 +11,7 @@ Documentation Folder:
 
 - [team-images](Documentation/Image/team-images) - contains an image of our team
 
-- [Video](Documentation/Video) - contains a video of our robots drive
+- [Videos](Documentation/Video) - contains video links of our obstacle and open challenge working
 
 Original code:
 
