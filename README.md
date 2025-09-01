@@ -3,7 +3,7 @@
 
 # Content
 
-- [CAD](CAD) - contains the CAD for our robot
+- [CAD](CAD) - contains the CAD and photos of the CAD for our robot
 
 Documentation Folder:
 
