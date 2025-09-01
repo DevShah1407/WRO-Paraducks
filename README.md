@@ -3,7 +3,10 @@
 
 # Content
 
-- [CAD](CAD) - contains the CAD and photos of the CAD for our robot
+CAD Folder:
+
+- [WRO_ROBOT complete 1.zip](CAD/WRO_ROBOT_complete.zip) - contains the CAD of our robot
+- [Photos](CAD/Photos) - contains the photos of the CAD for our robot
 
 Documentation Folder:
 
