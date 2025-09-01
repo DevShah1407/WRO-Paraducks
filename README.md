@@ -5,8 +5,9 @@
 
 CAD Folder:
 
-- [WRO_ROBOT complete 1.zip](CAD/WRO_ROBOT_complete.zip) - contains the CAD of our robot
+- [3D Prints](CAD/3D_Prints) - contains all CAD models of 3D prints used
 - [Photos](CAD/Photos) - contains the photos of the CAD for our robot
+- [WRO_ROBOT complete 1.zip](CAD/WRO_ROBOT_complete.zip) - contains the CAD of our robot
 
 Documentation Folder:
 
