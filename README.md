@@ -23,11 +23,11 @@ Original code:
 
 Final Code Folder:
 
-- [Imports.zip](FinalCode/Imports.zip) - contains our imports and functions
-
 - [Open_Challenge_2025.py](FinalCode/Open_Challenge_2025.py) - contains our final code for the open challenge
 
 - [Obstacle_Challenge_2025_Final.py](FinalCode/Obstacle_Challenge_2025_Final.py) - contains our final code for the obstacle challenge
+
+- Other files are imports, functions, subsystems, etc. 
 
 
 
